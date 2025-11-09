@@ -1,0 +1,38 @@
+{
+  "info": {
+    "name": "Order Execution Engine",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Execute Order",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {"mode": "raw", "raw": "{\"tokenIn\":\"SOL\",\"tokenOut\":\"USDC\",\"amountIn\":100,\"slippage\":0.01}"},
+        "url": {"raw": "http://localhost:3000/api/orders/execute"}
+      }
+    },
+    {
+      "name": "Get Order",
+      "request": {
+        "method": "GET",
+        "url": {"raw": "http://localhost:3000/api/orders/{{orderId}}"}
+      }
+    },
+    {
+      "name": "Get All Orders",
+      "request": {
+        "method": "GET",
+        "url": {"raw": "http://localhost:3000/api/orders"}
+      }
+    },
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "url": {"raw": "http://localhost:3000/health"}
+      }
+    }
+  ]
+}
